@@ -54,13 +54,24 @@ class MainActivity : AppCompatActivity() {
             seekBarSound!!.progress = sound
             seekBarBrightness!!.progress = brightness
             radioGroupDiffLevel!!.check(checkedRadioButtonId)
-        } else {
+        }
+        else {
             radioGroupDiffLevel!!.check(R.id.radioButton_medium)
             Toast.makeText(this, "Use the default game setting", Toast.LENGTH_LONG).show()
         }
     }
 
     private fun doSave(view: View?) {
+        val sharedPreferences = getSharedPreferences("gameSetting", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt("brightness", seekBarBrightness!!.progress)
+        editor.putInt("sound", seekBarSound!!.progress)
+        editor.putString("text", edtPersonName!!.toString())
 
+        val checkedRadioButtonId = radioGroupDiffLevel!!.checkedRadioButtonId
+        editor.putInt("checkedRadioButtonId", checkedRadioButtonId)
+
+        editor.apply()
+        Toast.makeText(this, "Game Setting saved!", Toast.LENGTH_LONG).show()
     }
 }
