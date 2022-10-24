@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AppSharedPreferences</string>
+    <string name="game_settings">Game Settings</string>
+    <string name="sound">Sound:</string>
+    <string name="bightness">Bightness:</string>
+    <string name="difficulty_level">Difficulty Level:</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="save">Save</string>
+    <string name="name">Name</string>
+</resources>
